@@ -7,10 +7,27 @@
 	<title>Player</title>
 </head>
 <body>
-  <audio class="audio" src="audio/SMG-get_busy.mp3" controls></audio>
+  <button class="select-track">Select track</button>
+  <button class="play">Play</button>
+  <button class="pause">Pause</button>
+  <button class="stop">Stop</button>
   <button class="add-point">Add breakpoint</button>
   <button class="minus-second">-1 second</button>
+  <p class="current-track">
+    Current track:<br>
+    <span class="current"></span>
+  </p>
   <ol class="point-list"></ol>
-	<script src="js/app.js"></script>
+  <ul class="track-list">
+    <li class="track-item">SMG - Eternal Crusade</li>
+    <li class="track-item">SMG - For The Cult</li>
+    <li class="track-item">SMG - Get Busy</li>
+    <li class="track-item">SMG - Hail To The Tsar</li>
+    <li class="track-item">SMG - Metal Bear Stomp</li>
+    <li class="track-item">SMG - No Sleep Till</li>
+    <li class="track-item">SMG - No Way Back</li>
+    <li class="track-item">SMG - Walking Tall</li>
+  </ul>
+  <script src="js/app.js"></script>
 </body>
 </html>
