@@ -1,5 +1,4 @@
 let audio = new Audio()
-audio.src = 'audio/SMG - No Sleep Till Hell.mp3'
 
 //audio controls
 document.querySelector('.play').addEventListener('click', function() {
@@ -47,10 +46,27 @@ let convertTime = function(sec) {
 //select track
 let track = document.querySelectorAll('.track-name')
 let currentTrack = document.querySelector('.current')
+let trackDuration = document.querySelectorAll('.track-duration')
+
 for (let i = 0; i < track.length; i++) {
   track[i].addEventListener('click', function() {
     audio.src = 'audio/' + track[i].innerHTML + '.mp3'
     currentTrack.innerHTML = track[i].innerHTML;
+  })
+}
+
+//change lists between .window-menu items
+let menuBtn = document.querySelectorAll('.menu-btn')
+let infoList = document.querySelectorAll('.list')
+
+for(let i = 0; i < menuBtn.length; i++) {
+  menuBtn[i].addEventListener('click', function() {
+    for(let i = 0; i < menuBtn.length; i++) {
+      menuBtn[i].classList.remove('active')
+      infoList[i].classList.remove('active')
+    }
+    menuBtn[i].classList.add('active')
+    infoList[i].classList.add('active')
   })
 }
 
