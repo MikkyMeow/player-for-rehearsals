@@ -50,8 +50,10 @@ let trackDuration = document.querySelectorAll('.track-duration')
 
 for (let i = 0; i < track.length; i++) {
   track[i].addEventListener('click', function() {
+    localStorage.clear();
     audio.src = 'audio/' + track[i].innerHTML + '.mp3'
-    currentTrack.innerHTML = track[i].innerHTML;
+    currentTrack.innerHTML = track[i].innerHTML
+    // localStorage.setItem('track', audio.src)
   })
 }
 
@@ -64,12 +66,32 @@ for(let i = 0; i < menuBtn.length; i++) {
     for(let i = 0; i < menuBtn.length; i++) {
       menuBtn[i].classList.remove('active')
       infoList[i].classList.remove('active')
+      
     }
     menuBtn[i].classList.add('active')
     infoList[i].classList.add('active')
   })
 }
 
+//adding breakpoints
+let addPoint = document.querySelector('.add-point')
+let pointList = document.querySelector('.point-list')
 
-// audio.addEventListener('loadedmetadata', function() {
-// })
+addPoint.addEventListener('click', function() {
+  let li = document.createElement('li')
+  li.setAttribute('class', 'point-item')
+  li.setAttribute('data-time', audio.currentTime)
+  // localStorage.setItem(localStorage.length - 1, audio.currentTime)
+  li.innerHTML = convertTime(audio.currentTime)
+  pointList.append(li)
+})
+
+pointList.addEventListener('mouseover', function() {
+  let pointItem = document.querySelectorAll('.point-item');
+  for (let i = 0; i < pointItem.length; i++) {
+    pointItem[i].addEventListener('click', function() {
+      audio.currentTime = pointItem[i].dataset.time;
+      console.log(123);
+    });
+  }
+}); 
