@@ -43,3 +43,17 @@ let convertTime = function(sec) {
   date.setSeconds(Math.round(sec))
   return date.toISOString().substr(14, 5)
 }
+
+//select track
+let track = document.querySelectorAll('.track-name')
+let currentTrack = document.querySelector('.current')
+for (let i = 0; i < track.length; i++) {
+  track[i].addEventListener('click', function() {
+    audio.src = 'audio/' + track[i].innerHTML + '.mp3'
+    currentTrack.innerHTML = track[i].innerHTML;
+  })
+}
+
+
+// audio.addEventListener('loadedmetadata', function() {
+// })
