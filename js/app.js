@@ -91,7 +91,6 @@ pointList.addEventListener('mouseover', function() {
   for (let i = 0; i < pointItem.length; i++) {
     pointItem[i].addEventListener('click', function() {
       audio.currentTime = pointItem[i].dataset.time;
-      console.log(123);
     });
   }
 }); 
