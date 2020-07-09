@@ -3,31 +3,61 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 	<title>Player</title>
 </head>
 <body>
-  <button class="select-track">Select track</button>
-  <button class="play">Play</button>
-  <button class="pause">Pause</button>
-  <button class="stop">Stop</button>
-  <button class="add-point">Add breakpoint</button>
-  <button class="minus-second">-1 second</button>
-  <p class="current-track">
-    Current track:<br>
-    <span class="current">none</span>
-  </p>
-  <ol class="point-list"></ol>
-  <ul class="track-list">
-    <li class="track-item">SMG - Eternal Crusade</li>
-    <li class="track-item">SMG - For The Cult</li>
-    <li class="track-item">SMG - Get Busy</li>
-    <li class="track-item">SMG - Hail To The Tsar</li>
-    <li class="track-item">SMG - Metal Bear Stomp</li>
-    <li class="track-item">SMG - No Sleep Till Hell</li>
-    <li class="track-item">SMG - No Way Back</li>
-    <li class="track-item">SMG - Walking Tall</li>
-  </ul>
+  <div class="wrapper">
+    <div class="half-container">
+      <div class="window-menu">
+        <button class="playlist-btn active">Show tracklist</button>
+        <button class="point-btn">Show breakpoints</button>
+        <button class="settings-btn">Settings</button>
+      </div>
+      <div class="info-container">
+        <ul class="settings"></ul>
+        <ul class="point-list active"></ul>
+        <ul class="track-list">
+          <li class="track-item">SMG - Eternal Crusade</li>
+          <li class="track-item">SMG - For The Cult</li>
+          <li class="track-item">SMG - Get Busy</li>
+          <li class="track-item">SMG - Hail To The Tsar</li>
+          <li class="track-item">SMG - Metal Bear Stomp</li>
+          <li class="track-item">SMG - No Sleep Till Hell</li>
+          <li class="track-item">SMG - No Way Back</li>
+          <li class="track-item">SMG - Walking Tall</li>
+        </ul>
+      </div>
+      <button class="add-point">Add breakpoint</button>
+    </div>
+    <div class="half-container">
+      <p class="current-track">
+        Current track:<br>
+        <span class="current">none</span>
+      </p>
+      <div class="range">
+        <span class="current-seconds">0.000</span>
+        <span class="duration">0.000</span>
+        <div class="track-range">
+          <div class="range-control"></div>
+        </div>
+      </div>
+      <div class="rewind-controls">
+        <button class="rewind-control">-10s</button>
+        <button class="rewind-control">-5s</button>
+        <button class="rewind-control">-1s</button>
+        <button class="rewind-control">+1s</button>
+        <button class="rewind-control">+5s</button>
+        <button class="rewind-control">+10s</button>
+      </div>
+      <div class="track-controls">
+        <button class="play">Play</button>
+        <button class="pause">Pause</button>
+        <button class="stop">Stop</button>
+      </div>
+    </div>
+  </div>
   <script src="js/app.js"></script>
 </body>
 </html>

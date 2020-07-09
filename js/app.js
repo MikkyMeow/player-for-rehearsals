@@ -11,6 +11,7 @@ let currentTrack = document.querySelector('.current');
 
 
 let audio = new Audio();
+audio.src="audio/SMG - No Way Back.mp3"
 
 playBtn.addEventListener('click', function() {
   audio.play();
