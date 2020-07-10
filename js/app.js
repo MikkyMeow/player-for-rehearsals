@@ -1,6 +1,6 @@
-let audio = new Audio()
+let audio = document.querySelector('.audio')
 
-//audio controls
+// //audio controls
 document.querySelector('.play').addEventListener('click', function() {
   audio.play()
 })
@@ -49,11 +49,17 @@ let currentTrack = document.querySelector('.current')
 let trackDuration = document.querySelectorAll('.track-duration')
 
 for (let i = 0; i < track.length; i++) {
-  track[i].addEventListener('click', function() {
-    localStorage.clear();
-    audio.src = 'audio/' + track[i].innerHTML + '.mp3'
-    currentTrack.innerHTML = track[i].innerHTML
-    // localStorage.setItem('track', audio.src)
+
+  
+track[i].addEventListener('click', function() {
+  if(track[i].innerHTML !== currentTrack.innerHTML) {
+    while (pointList.firstChild) {
+      pointList.removeChild(pointList.firstChild)
+    }
+  }
+  addPoint.removeAttribute('disabled')
+  audio.src = 'audio/' + track[i].innerHTML + '.mp3'
+  currentTrack.innerHTML = track[i].innerHTML
   })
 }
 
@@ -66,7 +72,6 @@ for(let i = 0; i < menuBtn.length; i++) {
     for(let i = 0; i < menuBtn.length; i++) {
       menuBtn[i].classList.remove('active')
       infoList[i].classList.remove('active')
-      
     }
     menuBtn[i].classList.add('active')
     infoList[i].classList.add('active')
@@ -81,7 +86,6 @@ addPoint.addEventListener('click', function() {
   let li = document.createElement('li')
   li.setAttribute('class', 'point-item')
   li.setAttribute('data-time', audio.currentTime)
-  // localStorage.setItem(localStorage.length - 1, audio.currentTime)
   li.innerHTML = convertTime(audio.currentTime)
   pointList.append(li)
 })

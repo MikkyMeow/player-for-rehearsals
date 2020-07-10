@@ -1,7 +1,7 @@
 body {
-  font-family: 'Do Hyeon', sans-serif;
+  font-family: 'Neucha', cursive;
   margin: 0;
-  font-size: 24px;
+  font-size: 20px;
 }
 
 .wrapper {
@@ -12,7 +12,17 @@ body {
 }
 
 button {
-  font-size: 24px;
+  font-family: 'Neucha', cursive;
+  font-size: 20px;
+}
+
+button:focus {
+  outline: none;
+}
+
+button,
+li {
+  cursor: pointer;
 }
 
 .half-container {
@@ -22,21 +32,13 @@ button {
   border: 1px solid black;
   border-radius: 10px;
   background-color: #fefefe;
-  height: calc(100% - 213px);
+  height: calc(100% - 231px);
 }
 
 .half-container:last-child {
   top: auto;
   bottom: 0;
-  height: 219px;
-}
-
-button {
-  font-family: 'Do Hyeon', sans-serif;
-}
-
-button:focus {
-  outline: none;
+  height: 243px;
 }
 
 .half-container:last-child button:active {
@@ -75,6 +77,8 @@ button:focus {
 
 .info-container li {
   list-style-type: none;
+  min-height: 35px;
+  line-height: 35px;
 }
 
 .info-container li:active .track-name {
@@ -96,11 +100,21 @@ button:focus {
   left: 50%;
   background-color: inherit;
   transform: translateX(-50%);
+  border: 1px solid black;
+  border-radius: 12px 12px 0 0;
+  padding: 5px 10px;
+  background-color: black;
+  color: white;
+  transition: all .25s;
 }
 
 .add-point:active {
   bottom: 16px;
   transform: translateX(calc(-50% + 1px));
+}
+
+.add-point:disabled {
+  bottom: -25px;
 }
 
 .current-track {
@@ -130,22 +144,54 @@ button:focus {
 }
 
 .rewind-controls {
-  width: 100%;
+  width: 320px;
   text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  justify-content: center;
 }
 
 .rewind-control {
+  width: 50px;
+  height: 50px;
   border: none;
   background-color: inherit;
+  border: 1px solid black;
+  border-radius: 50%;
+  padding: 5px 10px;
+  background-color: black;
+  color: white;
+  margin: 3px 7px;
+}
+
+.rewind-control:last-of-type {
+  order: 1;
 }
 
 .track-controls {
-  width: 100%;
+  width: 180;
   text-align: center;
-  margin-bottom: 10px;
 }
 
 .track-controls button {
   border: none;
   background-color: inherit;
+  font-size: 0;
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  margin: 3px;
+}
+
+.play {
+  background-image: url('../img/play.svg')
+}
+
+.pause {
+  background-image: url('../img/pause.svg')
+}
+
+.stop {
+  background-image: url('../img/stop.svg')
 }

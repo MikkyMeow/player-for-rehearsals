@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Neucha&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 	<title>Player</title>
 </head>
@@ -11,42 +11,18 @@
   <div class="wrapper">
     <div class="half-container">
       <div class="window-menu">
-        <button class="menu-btn playlist-btn active">Show tracklist</button>
-        <button class="menu-btn point-btn">Show breakpoints</button>
-        <button class="menu-btn settings-btn" disabled>Settings</button>
+        <button class="menu-btn playlist-btn active">Плейлист</button>
+        <button class="menu-btn point-btn">Точки остановки</button>
+        <button class="menu-btn settings-btn" disabled>Настройки</button>
       </div>
       <div class="info-container">
         <ul class="list track-list active">
           <li class="track-item">
-            <span class="track-name">SMG - Eternal Crusade</span>
+            <span class="track-name">Танго - Танго</span>
             <!-- <span class="track-duration">0:00</span> -->
           </li>
           <li class="track-item">
-            <span class="track-name">SMG - For The Cult</span>
-            <!-- <span class="track-duration">0:00</span> -->
-          </li>
-          <li class="track-item">
-            <span class="track-name">SMG - Get Busy</span>
-            <!-- <span class="track-duration">0:00</span> -->
-          </li>
-          <li class="track-item">
-            <span class="track-name">SMG - Hail To The Tsar</span>
-            <!-- <span class="track-duration">0:00</span> -->
-          </li>
-          <li class="track-item">
-            <span class="track-name">SMG - Metal Bear Stomp</span>
-            <!-- <span class="track-duration">0:00</span> -->
-          </li>
-          <li class="track-item">
-            <span class="track-name">SMG - No Sleep Till Hell</span>
-            <!-- <span class="track-duration">0:00</span> -->
-          </li>
-          <li class="track-item">
-            <span class="track-name">SMG - No Way Back</span>
-            <!-- <span class="track-duration">0:00</span> -->
-          </li>
-          <li class="track-item">
-            <span class="track-name">SMG - Walking Tall</span>
+            <span class="track-name">Youngblood Brass Band - Brooklyn</span>
             <!-- <span class="track-duration">0:00</span> -->
           </li>
         </ul>
@@ -54,14 +30,15 @@
         </ul>
         <ul class="list settings"></ul>
       </div>
-      <button class="add-point">Add breakpoint</button>
+      <button class="add-point" disabled>Добавить точку</button>
     </div>
     <div class="half-container">
       <p class="current-track">
-        Current track:<br>
-        <span class="current">none</span>
+        Текущий трек:<br>
+        <span class="current">Не выбран</span>
       </p>
       <div class="range">
+        <audio src="#" class="audio"></audio>
         <span class="current-seconds">00:00</span>
         <span class="duration">00:00</span>
         <div class="track-range">
@@ -70,16 +47,16 @@
       </div>
       <div class="rewind-controls">
         <button class="rewind-control">-10s</button>
+        <div class="track-controls">
+          <button class="play">Play</button>
+          <button class="pause">Pause</button>
+          <button class="stop">Stop</button>
+        </div>
+        <button class="rewind-control">+10s</button>
         <button class="rewind-control">-5s</button>
         <button class="rewind-control">-1s</button>
         <button class="rewind-control">+1s</button>
         <button class="rewind-control">+5s</button>
-        <button class="rewind-control">+10s</button>
-      </div>
-      <div class="track-controls">
-        <button class="play">Play</button>
-        <button class="pause">Pause</button>
-        <button class="stop">Stop</button>
       </div>
     </div>
   </div>
