@@ -44,14 +44,14 @@ let convertTime = function(sec) {
 }
 
 //select track
+let trackItem = document.querySelectorAll('.track-item')
 let track = document.querySelectorAll('.track-name')
 let currentTrack = document.querySelector('.current')
 let trackDuration = document.querySelectorAll('.track-duration')
 
-for (let i = 0; i < track.length; i++) {
+for (let i = 0; i < trackItem.length; i++) {
 
-  
-track[i].addEventListener('click', function() {
+trackItem[i].addEventListener('click', function() {
   if(track[i].innerHTML !== currentTrack.innerHTML) {
     while (pointList.firstChild) {
       pointList.removeChild(pointList.firstChild)
