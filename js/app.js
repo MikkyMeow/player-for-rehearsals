@@ -60,6 +60,7 @@ track[i].addEventListener('click', function() {
   addPoint.removeAttribute('disabled')
   audio.src = 'audio/' + track[i].innerHTML + '.mp3'
   currentTrack.innerHTML = track[i].innerHTML
+  audio.play();
   })
 }
 
