@@ -44,23 +44,39 @@ let convertTime = function(sec) {
 }
 
 //select track
-let trackItem = document.querySelectorAll('.track-item')
-let track = document.querySelectorAll('.track-name')
+let trackSrc = document.querySelectorAll('.track-name')
 let currentTrack = document.querySelector('.current')
 let trackDuration = document.querySelectorAll('.track-duration')
+let tracksArray = [];
+let trackCount;
 
-for (let i = 0; i < trackItem.length; i++) {
+for (let i = 0; i < trackSrc.length; i++) {
 
-trackItem[i].addEventListener('click', function() {
-  if(track[i].innerHTML !== currentTrack.innerHTML) {
-    while (pointList.firstChild) {
-      pointList.removeChild(pointList.firstChild)
+  tracksArray[i] = {
+    track: trackSrc[i].dataset.src,
+    points: []
+  };
+
+  trackSrc[i].addEventListener('click', function() {
+    if(trackSrc[i].innerHTML !== currentTrack.innerHTML) {
+      while (pointList.firstChild) {
+        pointList.removeChild(pointList.firstChild)
+      }
     }
-  }
-  addPoint.removeAttribute('disabled')
-  audio.src = 'audio/' + track[i].innerHTML + '.mp3'
-  currentTrack.innerHTML = track[i].innerHTML
-  audio.play();
+    
+    for (let j = 0; j < tracksArray[i].points.length; j++) {
+      let li = document.createElement('li')
+      li.setAttribute('class', 'point-item')
+      li.setAttribute('data-time', tracksArray[i].points[j])
+      li.innerHTML = convertTime(tracksArray[i].points[j])
+      pointList.append(li)
+    }
+
+    audio.src = tracksArray[i].track
+    trackCount = i
+    currentTrack.innerHTML = trackSrc[i].innerHTML
+    addPoint.removeAttribute('disabled')
+    audio.play()
   })
 }
 
@@ -84,6 +100,7 @@ let addPoint = document.querySelector('.add-point')
 let pointList = document.querySelector('.point-list')
 
 addPoint.addEventListener('click', function() {
+  tracksArray[trackCount].points.push(audio.currentTime)
   let li = document.createElement('li')
   li.setAttribute('class', 'point-item')
   li.setAttribute('data-time', audio.currentTime)
