@@ -156,15 +156,25 @@ let showInfo = document.querySelector('.speed-info')
 
 speedControl[0].addEventListener('click', function() {
   audio.playbackRate -= .05;
-  showInfo.innerHTML = 'Скорость воспроизведения: ' + audio.playbackRate;
+  showInfo.innerHTML = audio.playbackRate.toFixed(2) + 'x';
 })
 
 speedControl[1].addEventListener('click', function() {
   audio.playbackRate = 1;
-  showInfo.innerHTML = 'Скорость воспроизведения: ' + audio.playbackRate;
+  showInfo.innerHTML = audio.playbackRate.toFixed(2) + 'x';
 })
 
 speedControl[2].addEventListener('click', function() {
   audio.playbackRate += .05;
-  showInfo.innerHTML = 'Скорость воспроизведения: ' + audio.playbackRate;
+  showInfo.innerHTML = audio.playbackRate.toFixed(2) + 'x';
 })
+
+//controls btn
+let controlsBtn = document.querySelectorAll('.controls-btn')
+let controlLists = document.querySelectorAll('.controls-block')
+
+for (let i = 0; i < controlsBtn.length; i++) {
+  controlsBtn[i].addEventListener('click', function() {
+    controlLists[i].classList.toggle('active')
+  })
+}
