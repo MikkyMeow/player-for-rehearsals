@@ -160,6 +160,11 @@ speedControl[0].addEventListener('click', function() {
 })
 
 speedControl[1].addEventListener('click', function() {
+  audio.playbackRate = 1;
+  showInfo.innerHTML = 'Скорость воспроизведения: ' + audio.playbackRate;
+})
+
+speedControl[2].addEventListener('click', function() {
   audio.playbackRate += .05;
   showInfo.innerHTML = 'Скорость воспроизведения: ' + audio.playbackRate;
 })
