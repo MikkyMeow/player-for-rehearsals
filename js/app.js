@@ -51,12 +51,7 @@ let tracksArray = [];
 let trackCount;
 
 if (localStorage.length === 0) {
-  for (let i = 0; i < trackSrc.length; i++) {
-    tracksArray[i] = {
-      track: trackSrc[i].dataset.src,
-      points: []
-    }
-  }
+  fillTracksArray();
 } else {
   tracksArray = JSON.parse(localStorage.getItem('tracks'))
 }
@@ -65,9 +60,7 @@ for (let i = 0; i < trackSrc.length; i++) {
 
   trackSrc[i].addEventListener('click', function() {
     if(trackSrc[i].innerHTML !== currentTrack.innerHTML) {
-      while (pointList.firstChild) {
-        pointList.removeChild(pointList.firstChild)
-      }
+      removeBreakpointsList();
     }
     
     for (let j = 0; j < tracksArray[i].points.length; j++) {
@@ -86,8 +79,23 @@ for (let i = 0; i < trackSrc.length; i++) {
     trackCount = i
     currentTrack.innerHTML = trackSrc[i].innerHTML
     addPoint.removeAttribute('disabled')
-    // audio.play()
+    audio.play()
   })
+}
+
+function fillTracksArray() {
+  for (let i = 0; i < trackSrc.length; i++) {
+    tracksArray[i] = {
+      track: trackSrc[i].dataset.src,
+      points: []
+    }
+  }
+}
+
+function removeBreakpointsList() {
+  while (pointList.firstChild) {
+    pointList.removeChild(pointList.firstChild)
+  }
 }
 
 //change lists between .window-menu items
@@ -131,3 +139,13 @@ pointList.addEventListener('mouseover', function() {
     });
   }
 }); 
+
+//localStorage clean
+let lsClean = document.querySelector('.localstorage-clean')
+
+lsClean.addEventListener('click', function() {
+  localStorage.clear();
+  fillTracksArray();
+  removeBreakpointsList();
+  alert('Локальное хранилище очищено.')
+})
