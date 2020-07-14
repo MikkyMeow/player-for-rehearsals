@@ -149,3 +149,17 @@ lsClean.addEventListener('click', function() {
   removeBreakpointsList();
   alert('Локальное хранилище очищено.')
 })
+
+//speed controls
+let speedControl = document.querySelectorAll('.speed-control')
+let showInfo = document.querySelector('.speed-info')
+
+speedControl[0].addEventListener('click', function() {
+  audio.playbackRate -= .05;
+  showInfo.innerHTML = 'Скорость воспроизведения: ' + audio.playbackRate;
+})
+
+speedControl[1].addEventListener('click', function() {
+  audio.playbackRate += .05;
+  showInfo.innerHTML = 'Скорость воспроизведения: ' + audio.playbackRate;
+})
