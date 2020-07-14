@@ -50,12 +50,18 @@ let trackDuration = document.querySelectorAll('.track-duration')
 let tracksArray = [];
 let trackCount;
 
-for (let i = 0; i < trackSrc.length; i++) {
+if (localStorage.length === 0) {
+  for (let i = 0; i < trackSrc.length; i++) {
+    tracksArray[i] = {
+      track: trackSrc[i].dataset.src,
+      points: []
+    }
+  }
+} else {
+  tracksArray = JSON.parse(localStorage.getItem('tracks'))
+}
 
-  tracksArray[i] = {
-    track: trackSrc[i].dataset.src,
-    points: []
-  };
+for (let i = 0; i < trackSrc.length; i++) {
 
   trackSrc[i].addEventListener('click', function() {
     if(trackSrc[i].innerHTML !== currentTrack.innerHTML) {
@@ -65,18 +71,22 @@ for (let i = 0; i < trackSrc.length; i++) {
     }
     
     for (let j = 0; j < tracksArray[i].points.length; j++) {
-      let li = document.createElement('li')
-      li.setAttribute('class', 'point-item')
-      li.setAttribute('data-time', tracksArray[i].points[j])
-      li.innerHTML = convertTime(tracksArray[i].points[j])
-      pointList.append(li)
+      if(trackSrc[i].innerHTML === currentTrack.innerHTML) {
+        return;
+      } else {
+        let li = document.createElement('li')
+        li.setAttribute('class', 'point-item')
+        li.setAttribute('data-time', tracksArray[i].points[j])
+        li.innerHTML = convertTime(tracksArray[i].points[j])
+        pointList.append(li)
+      }
     }
 
     audio.src = tracksArray[i].track
     trackCount = i
     currentTrack.innerHTML = trackSrc[i].innerHTML
     addPoint.removeAttribute('disabled')
-    audio.play()
+    // audio.play()
   })
 }
 
@@ -99,8 +109,13 @@ for(let i = 0; i < menuBtn.length; i++) {
 let addPoint = document.querySelector('.add-point')
 let pointList = document.querySelector('.point-list')
 
+
 addPoint.addEventListener('click', function() {
   tracksArray[trackCount].points.push(audio.currentTime)
+  
+  let serialArr = JSON.stringify(tracksArray);
+  localStorage.setItem('tracks', serialArr);
+    
   let li = document.createElement('li')
   li.setAttribute('class', 'point-item')
   li.setAttribute('data-time', audio.currentTime)
