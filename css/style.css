@@ -61,6 +61,7 @@ li {
   border: none;
   background-color: inherit;
   font-size: 20px;
+  padding: 10px 0;
 }
 
 .window-menu button.active {
@@ -76,10 +77,20 @@ li {
   padding-left: 10px;
   display: none;
   overflow-y: scroll;
+  position: relative;
 }
 
 .info-container ul.active {
   display: block;
+}
+
+@keyframes right {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: -100%;
+  }
 }
 
 .info-container li {
@@ -189,14 +200,16 @@ li {
   height: 30px;
   background-color: #fefefe;
   top: -82px;
-  left: -100%;
+  left: -50%;
   border: 1px solid black;
   border-radius: 8px;
+  opacity: 0;
   transition: all 1s;
 }
 
 .controls-block.active {
   left: -10px;
+  opacity: 1;
 }
 
 .controls-btn + ul li button {
@@ -206,7 +219,7 @@ li {
 
 .controls-block.speed {
   left: auto;
-  right: -100%;
+  right: -50%;
   transition: all 1s;
 }
 
@@ -214,6 +227,7 @@ li {
   right: -10px;
   padding: 8px;
   padding-right: 20px;
+  opacity: 1;
 }
 
 .speed-info {
