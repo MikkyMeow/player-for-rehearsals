@@ -84,15 +84,6 @@ li {
   display: block;
 }
 
-@keyframes right {
-  0% {
-    left: 0;
-  }
-  100% {
-    left: -100%;
-  }
-}
-
 .info-container li {
   list-style-type: none;
   min-height: 35px;

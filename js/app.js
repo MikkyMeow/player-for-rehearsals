@@ -111,10 +111,6 @@ for(let i = 0; i < menuBtn.length; i++) {
     menuBtn[i].classList.add('active')
     infoList[i].classList.add('active')
     activeCount = i
-    
-    infoList[i].style.animationName = "right"
-    infoList[i].style.animationDuration = ".3s"
-    infoList[i].style.animationDirection = "reverse"
   })
 }
 
