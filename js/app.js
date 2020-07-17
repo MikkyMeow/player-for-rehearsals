@@ -121,10 +121,16 @@ for(let i = 0; i < menuBtn.length; i++) {
 //adding breakpoints
 let addPoint = document.querySelector('.add-point')
 let pointList = document.querySelector('.point-list')
+let trackPoint = document.querySelectorAll('.track-points')
 
+for (let i = 0; i < trackPoint.length; i++) {
+  trackPoint[i].innerHTML = tracksArray[i].points.length
+}
 
 addPoint.addEventListener('click', function() {
   tracksArray[trackCount].points.push(audio.currentTime)
+  
+  trackPoint[trackCount].innerHTML = parseInt(trackPoint[trackCount].innerHTML) + 1;
   
   let serialArr = JSON.stringify(tracksArray);
   localStorage.setItem('tracks', serialArr);
@@ -150,6 +156,10 @@ let lsClean = document.querySelector('.localstorage-clean')
 
 lsClean.addEventListener('click', function() {
   localStorage.clear();
+  console.log(123);
+  for (let i = 0; i < trackPoint.length; i++) {
+    trackPoint[i].innerHTML = 0;
+  }
   fillTracksArray();
   removeBreakpointsList();
   alert('Локальное хранилище очищено.')

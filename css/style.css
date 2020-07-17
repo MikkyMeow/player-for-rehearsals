@@ -97,12 +97,22 @@ li {
   list-style-type: none;
   min-height: 35px;
   line-height: 35px;
-  width: 90%;
+  width: 93%;
 }
 
-.info-container li:hover {
-  transform: scale(1.05);
-  transform: translateX(15px);
+.track-name {
+  white-space: pre;
+  overflow: hidden;
+}
+
+.track-points {
+  position: relative;
+  left: 15px;
+}
+
+.info-container .track-name:hover {
+  position: relative;
+  left: 10px;
   transition: all .3s;
 }
 
