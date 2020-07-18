@@ -1,0 +1,22 @@
+{
+  "name": "player-for-rehearsals",
+  "version": "1.0.0",
+  "description": "Player that allows you to add breakpoints and replace between them for playing",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MikkyMeow/player-for-rehearsals.git"
+  },
+  "author": "Artur Akhmadullin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MikkyMeow/player-for-rehearsals/issues"
+  },
+  "homepage": "https://github.com/MikkyMeow/player-for-rehearsals#readme",
+  "dependencies": {
+    "sequelize": "^6.3.3"
+  }
+}
