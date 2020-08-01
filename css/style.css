@@ -254,3 +254,10 @@ li {
 .speed-controls .controls-btn {
   background-image: url('../img/speed.svg');
 }
+
+.copyright {
+  color: black;
+  display: block;
+  text-align: right;
+  margin-right: 10px;
+}
