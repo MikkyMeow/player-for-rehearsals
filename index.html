@@ -1,156 +1,229 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/css2?family=Neucha&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
-	<title>Player</title>
-</head>
-<body>
-  <div class="wrapper">
-    <div class="half-container">
-      <div class="window-menu">
-        <button class="menu-btn playlist-btn active">Плейлист</button>
-        <button class="menu-btn point-btn">Точки остановки</button>
-        <button class="menu-btn settings-btn">Настройки</button>
-      </div>
-      <div class="info-container">
-        <ul class="list track-list active">
-          <li class="track-item">
-            <span class="track-name" data-src="audio/Waka waka (cherdak rec, 2nd vercion).mp3">Waka waka (cherdak rec. 2nd version)</span>
-            <span class="track-points">0</span>
-          </li>
-          <li class="track-item">
-            <span class="track-name" data-src="audio/Sophia Loren - Mambo Italiano.mp3">Sophia Loren - Mambo Italiano</span>
-            <span class="track-points">0</span>
-          </li>
-          <li class="track-item">
-            <span class="track-name" data-src="audio/Shakira - Waka Waka (Samba).mp3">Shakira - Waka Waka (Samba)</span>
-            <span class="track-points">0</span>
-          </li>
-          <li class="track-item">
-            <span class="track-name" data-src="audio/Llorare Las Penas.mp3">Llorare Las Penas</span>
-            <span class="track-points">0</span>
-          </li>
-          <li class="track-item">
-            <span class="track-name" data-src="audio/Johann Strauss - Fruhlingsstimmen.mp3">Johann Strauss - Fruhlingsstimmen</span>
-            <span class="track-points">0</span>
-          </li>
-          <li class="track-item">
-            <span class="track-name" data-src="audio/Gotan Project - Santa Maria (Del Buen Ayre).mp3">Gotan Project - Santa Maria (Del Buen Ayre)</span>
-            <span class="track-points">0</span>
-          </li>
-          <li class="track-item">
-            <span class="track-name" data-src="audio/El Tango De Los Assassinos.mp3">El Tango De Los Assassinos</span>
-            <span class="track-points">0</span>
-          </li>
-          <li class="track-item">
-            <span class="track-name" data-src="audio/Dixieland, var 1.mp3">Dixieland, var 1</span>
-            <span class="track-points">0</span>
-          </li>
-          <li class="track-item">
-            <span class="track-name" data-src="audio/Diras Que Estoy Loco.mp3">Diras Que Estoy Loco</span>
-            <span class="track-points">0</span>
-          </li>
-          <li class="track-item">
-            <span class="track-name" data-src="audio/Chica Bacilona (Ottomix, S.Egger, E-Mine Remix).mp3">Chica Bacilona (Ottomix, S.Egger, E-Mine Remix)</span>
-            <span class="track-points">0</span>
-          </li>
-          <li class="track-item">
-            <span class="track-name" data-src="audio/Alex Swings, Oscar Sings - Do The Cha Cha Cha.mp3">Alex Swings, Oscar Sings - Do The Cha Cha Cha</span>
-            <span class="track-points">0</span>
-          </li>
-          <li class="track-item">
-            <span class="track-name" data-src="audio/Танго - Танго.mp3">Танго - Танго</span>
-            <span class="track-points">0</span>
-          </li>
-          <li class="track-item">
-            <span class="track-name" data-src="audio/Спортивные бальные танцы - Румба.mp3">Спортивные бальные танцы - Румба</span>
-            <span class="track-points">0</span>
-          </li>
-          <li class="track-item">
-            <span class="track-name" data-src="audio/Румба.mp3">Румба</span>
-            <span class="track-points">0</span>
-          </li>
-          <li class="track-item">
-            <span class="track-name" data-src="audio/Пасодобль.mp3">Пасодобль</span>
-            <span class="track-points">0</span>
-          </li>
-          <li class="track-item">
-            <span class="track-name" data-src="audio/Микс - Ча-Ча-Ча, Румба, Джайв.mp3">Микс - Ча-Ча-Ча, Румба, Джайв</span>
-            <span class="track-points">0</span>
-          </li>
-          <li class="track-item">
-            <span class="track-name" data-src="audio/Медленный фокстрот.mp3">Медленный фокстрот</span>
-            <span class="track-points">0</span>
-          </li>
-          <li class="track-item">
-            <span class="track-name" data-src="audio/Медленный вальс.mp3">Медленный вальс</span>
-            <span class="track-points">0</span>
-          </li>
-          <li class="track-item">
-            <span class="track-name" data-src="audio/Барабаны - Африка.mp3">Барабаны - Африка</span>
-            <span class="track-points">0</span>
-          </li>
-          <li class="track-item">
-            <span class="track-name" data-src="audio/Барабаны - Африка 2.mp3">Барабаны - Африка 2</span>
-            <span class="track-points">0</span>
-          </li>
-          <li class="track-item">
-            <span class="track-name" data-src="audio/Waka Waka (cherdak rec.).mp3">Waka waka (cherdak rec.)</span>
-            <span class="track-points">0</span>
-          </li>
-        </ul>
-        <ul class="list point-list">
-        </ul>
-        <ul class="list settings">
-          <li class="localstorage-clean">Очистить хранилище</li>
-        </ul>
-      </div>
-      <button class="add-point" disabled>Добавить точку</button>
-    </div>
-    <div class="half-container">
-      <p class="current-track">
-        Текущий трек:<br>
-        <span class="current">Не выбран</span>
-      </p>
-      <div class="range">
-        <audio src="#" class="audio"></audio>
-        <span class="current-seconds">00:00</span>
-        <span class="duration">00:00</span>
-        <div class="track-range">
-          <div class="range-control"></div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Neucha&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Player</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="half-container">
+        <div class="window-menu">
+          <button class="menu-btn playlist-btn active">Плейлист</button>
+          <button class="menu-btn point-btn">Точки остановки</button>
+          <button class="menu-btn settings-btn">Настройки</button>
+          <span class="btn-line"></span>
         </div>
-      </div>
-      <div class="controls">
-        <div class="rewind-controls">
-          <button class="controls-btn">rewind</button>
-          <ul class="controls-block">
-            <li><button class="rewind-control">-10s</button></li>
-            <li><button class="rewind-control">-5s</button></li>
-            <li><button class="rewind-control">+5s</button></li>
-            <li><button class="rewind-control">+10s</button></li>
+        <div class="info-container">
+          <ul class="list track-list active">
+            <li class="track-item" data-src="Waka waka (cherdak rec, 2nd version)">
+              <div class="track-name">
+                <span class="playlist__track">Waka Waka</span>
+                <span class="playlist__author"
+                  >Shakira (cherdak rec. 2nd)</span
+                >
+              </div>
+              <span class="track-points">0</span>
+            </li>
+            <li class="track-item" data-src="Sophia Loren - Mambo Italiano">
+              <div class="track-name">
+                <span class="playlist__track">Mambo Italiano</span>
+                <span class="playlist__author">Sophia Loren</span>
+              </div>
+              <span class="track-points">0</span>
+            </li>
+            <li class="track-item" data-src="Shakira - Waka Waka (Samba)">
+              <div class="track-name">
+                <span class="playlist__track">Waka Waka</span>
+                <span class="playlist__author">Shakira</span>
+              </div>
+              <span class="track-points">0</span>
+            </li>
+            <li class="track-item" data-src="Llorare Las Penas">
+              <div class="track-name">
+                <span class="playlist__track">Llorare Las Penas</span>
+                <span class="playlist__author">David Bisbal</span>
+              </div>
+              <span class="track-points">0</span>
+            </li>
+            <li class="track-item" data-src="Johann Strauss - Fruhlingsstimmen">
+              <div class="track-name">
+                <span class="playlist__track">Fruhlingsstimmen</span>
+                <span class="playlist__author">Johann Strauss</span>
+              </div>
+              <span class="track-points">0</span>
+            </li>
+            <li class="track-item" data-src="Gotan Project - Santa Maria (Del Buen Ayre)">
+              <div class="track-name">
+                <span class="playlist__track">Santa Maria</span>
+                <span class="playlist__author">Gotan Project</span>
+              </div>
+              <span class="track-points">0</span>
+            </li>
+            <li class="track-item" data-src="El Tango De Los Assassinos">
+              <div class="track-name">
+                <span class="playlist__track">El Tango</span>
+                <span class="playlist__author">De Los Assassinos</span>
+              </div>
+              <span class="track-points">0</span>
+            </li>
+            <li class="track-item" data-src="Dixieland, var 1">
+              <div class="track-name">
+                <span class="playlist__track">Dixieland, var 1</span>
+                <span class="playlist__author"></span>
+              </div>
+              <span class="track-points">0</span>
+            </li>
+            <li class="track-item" data-src="Diras Que Estoy Loco">
+              <div class="track-name">
+                <span class="playlist__track">Diras Que</span>
+                <span class="playlist__author">Estoy Loco</span>
+              </div>
+              <span class="track-points">0</span>
+            </li>
+            <li class="track-item" data-src="Chica Bacilona (Ottomix, S.Egger, E-Mine Remix)">
+              <div class="track-name">
+                <span class="playlist__track">Chica Bacilona</span>
+                <span class="playlist__author"
+                  >Ottomix, S.Egger, E-Mine Remix</span
+                >
+              </div>
+              <span class="track-points">0</span>
+            </li>
+            <li class="track-item" data-src="Alex Swings, Oscar Sings - Do The Cha Cha Cha">
+              <div class="track-name">
+                <span class="playlist__track">Do The Cha Cha Cha</span>
+                <span class="playlist__author">Alex Swings, Oscar Sings</span>
+              </div>
+              <span class="track-points">0</span>
+            </li>
+            <li class="track-item" data-src="Танго - Танго">
+              <div class="track-name">
+                <span class="playlist__track">Танго</span>
+                <span class="playlist__author">Танго</span>
+              </div>
+              <span class="track-points">0</span>
+            </li>
+            <li class="track-item" data-src="Спортивные бальные танцы - Румба">
+              <div class="track-name">
+                <span class="playlist__track">Румба</span>
+                <span class="playlist__author">Спортивные бальные танцы</span>
+              </div>
+              <span class="track-points">0</span>
+            </li>
+            <li class="track-item" data-src="Румба">
+              <div class="track-name">
+                <span class="playlist__track">Румба</span>
+                <span class="playlist__author">Румба</span>
+              </div>
+              <span class="track-points">0</span>
+            </li>
+            <li class="track-item" data-src="Пасодобль">
+              <div class="track-name">
+                <span class="playlist__track">Пасодобль</span>
+                <span class="playlist__author">Пасодобль</span>
+              </div>
+              <span class="track-points">0</span>
+            </li>
+            <li class="track-item" data-src="Микс - Ча-Ча-Ча, Румба, Джайв">
+              <div class="track-name">
+                <span class="playlist__track">Ча-Ча-Ча, Румба, Джайв</span>
+                <span class="playlist__author">Микс</span>
+              </div>
+              <span class="track-points">0</span>
+            </li>
+            <li class="track-item" data-src="Медленный фокстрот">
+              <div class="track-name">
+                <span class="playlist__track">Медленный фокстрот</span>
+                <span class="playlist__author">Медленный фокстрот</span>
+              </div>
+              <span class="track-points">0</span>
+            </li>
+            <li class="track-item" data-src="Медленный вальс">
+              <div class="track-name">
+                <span class="playlist__track">Медленный вальс</span>
+                <span class="playlist__author">Медленный вальс</span>
+              </div>
+              <span class="track-points">0</span>
+            </li>
+            <li class="track-item" data-src="Барабаны - Африка">
+              <div class="track-name">
+                <span class="playlist__track">Африка</span>
+                <span class="playlist__author">Барабаны</span>
+              </div>
+              <span class="track-points">0</span>
+            </li>
+            <li class="track-item" data-src="Барабаны - Африка 2">
+              <div class="track-name">
+                <span class="playlist__track">Африка 2</span>
+                <span class="playlist__author">Барабаны</span>
+              </div>
+              <span class="track-points">0</span>
+            </li>
+            <li class="track-item" data-src="Waka Waka (cherdak rec.)">
+              <div class="track-name">
+                <span class="playlist__track">Waka Waka</span>
+                <span class="playlist__author">Shakira (cherdak rec.)</span>
+              </div>
+              <span class="track-points">0</span>
+            </li>
+          </ul>
+          <ul class="list point-list"></ul>
+          <ul class="list settings">
+            <li class="localstorage-clean">Очистить хранилище</li>
           </ul>
         </div>
-        <div class="track-controls">
-          <button class="play">Play</button>
-          <button class="pause">Pause</button>
-          <button class="stop">Stop</button>
-        </div>
-        <div class="speed-controls">
-          <button class="controls-btn">speed</button>
-          <ul class="controls-block speed">
-            <li><span class="speed-info">1.00x</span></li>
-            <li><button class="speed-control">-</button></li>
-            <li><button class="speed-control">1x</button></li>
-            <li><button class="speed-control">+</button></li>
-          </ul>
-        </div>
       </div>
-      <a href="https://t.me/Artur_Akhmadullin" target="_blank" class="copyright">@Artur_Akhmadullin</a>
+      <div class="bottom-container">
+        <button class="add-point" disabled>+</button>
+        <p class="current-track">
+          Текущий трек:<br />
+          <span class="current">Не выбран</span>
+        </p>
+        <div class="range">
+          <audio src="#" class="audio"></audio>
+          <span class="current-seconds">00:00</span>
+          <span class="duration">00:00</span>
+          <div class="track-range">
+            <div class="range-control"></div>
+          </div>
+        </div>
+        <div class="controls">
+          <div class="rewind-controls">
+            <button class="button controls-btn">rewind</button>
+            <ul class="controls-block">
+              <li><button class="button rewind-control">-10s</button></li>
+              <li><button class="button rewind-control">-5s</button></li>
+              <li><button class="button rewind-control">+5s</button></li>
+              <li><button class="button rewind-control">+10s</button></li>
+            </ul>
+          </div>
+            <button class="button play">Play</button>
+            <button class="button pause">Pause</button>
+            <button class="button stop">Stop</button>
+          <div class="speed-controls">
+            <button class="button controls-btn">speed</button>
+            <ul class="controls-block speed">
+              <li><span class="button speed-info">1.00x</span></li>
+              <li><button class="button speed-control">-</button></li>
+              <li><button class="button speed-control">1x</button></li>
+              <li><button class="button speed-control">+</button></li>
+            </ul>
+          </div>
+        </div>
+        <a
+          href="https://t.me/Artur_Akhmadullin"
+          target="_blank"
+          class="copyright"
+          >@Artur_Akhmadullin</a
+        >
+      </div>
     </div>
-  </div>
-  <script src="js/app.js"></script>
-</body>
+    <script src="js/app.js"></script>
+  </body>
 </html>
