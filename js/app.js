@@ -44,7 +44,8 @@ let convertTime = function(sec) {
 }
 
 //select track
-let trackSrc = document.querySelectorAll('.track-name')
+let trackSrc = document.querySelectorAll('.track-item')
+const trackName = document.querySelectorAll('.track-name')
 let currentTrack = document.querySelector('.current')
 let trackDuration = document.querySelectorAll('.track-duration')
 let tracksArray = [];
@@ -75,9 +76,9 @@ for (let i = 0; i < trackSrc.length; i++) {
       }
     }
 
-    audio.src = tracksArray[i].track
+    audio.src = `../audio/${tracksArray[i].track}.mp3`
     trackCount = i
-    currentTrack.innerHTML = trackSrc[i].innerHTML
+    currentTrack.innerHTML = trackName[i].innerHTML
     addPoint.removeAttribute('disabled')
     audio.play()
   })
@@ -100,7 +101,9 @@ function removeBreakpointsList() {
 
 //change lists between .window-menu items
 let menuBtn = document.querySelectorAll('.menu-btn')
+let btnLine = document.querySelector('.btn-line')
 let infoList = document.querySelectorAll('.list')
+const infoContainer = document.querySelector('.info-container')
 
 for(let i = 0; i < menuBtn.length; i++) {
   menuBtn[i].addEventListener('click', function() {
@@ -110,7 +113,20 @@ for(let i = 0; i < menuBtn.length; i++) {
     }
     menuBtn[i].classList.add('active')
     infoList[i].classList.add('active')
+    btnLine.style.transform = `translateX(${i}00%)`
     activeCount = i
+    switch(i) {
+      case 0:
+        infoContainer.style.transform = 'translateX(0)'
+        break
+      case 1:
+        infoContainer.style.transform = 'translateX(-33.3333333333%)'
+        break
+      case 2:
+        infoContainer.style.transform = 'translateX(-66.6666666666%)'
+        break
+
+    }
   })
 }
 
@@ -152,7 +168,6 @@ let lsClean = document.querySelector('.localstorage-clean')
 
 lsClean.addEventListener('click', function() {
   localStorage.clear();
-  console.log(123);
   for (let i = 0; i < trackPoint.length; i++) {
     trackPoint[i].innerHTML = 0;
   }
