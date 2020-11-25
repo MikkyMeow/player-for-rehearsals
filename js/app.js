@@ -76,7 +76,7 @@ for (let i = 0; i < trackSrc.length; i++) {
       }
     }
 
-    audio.src = `../audio/${tracksArray[i].track}.mp3`
+    audio.src = `audio/${tracksArray[i].track}.mp3`
     trackCount = i
     currentTrack.innerHTML = trackName[i].innerHTML
     addPoint.removeAttribute('disabled')
