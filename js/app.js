@@ -51,10 +51,12 @@ let trackDuration = document.querySelectorAll('.track-duration')
 let tracksArray = [];
 let trackCount;
 
-if (localStorage.length === 0) {
+const storedTracks = localStorage.getItem('tracks');
+
+if (!storedTracks) {
   fillTracksArray();
 } else {
-  tracksArray = JSON.parse(localStorage.getItem('tracks'))
+  tracksArray = JSON.parse(storedTracks);
 }
 
 for (let i = 0; i < trackSrc.length; i++) {
